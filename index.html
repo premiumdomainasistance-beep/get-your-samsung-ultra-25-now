@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Venom | Dark Romance by Rina Kent</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #8a2be2;
+            --primary-dark: #6a1cb8;
+            --secondary: #ff6b6b;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.7)), url('https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background-color: #ff5252;
+        }
+
+        .btn-large {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+        }
+
+        /* Book Section */
+        .book-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .book-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .book-cover {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .book-cover img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease;
+        }
+
+        .book-cover img:hover {
+            transform: scale(1.03);
+        }
+
+        .book-details {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .book-details h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .author {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .rating {
+            color: #ffc107;
+            margin-bottom: 1.5rem;
+        }
+
+        .description {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 2rem;
+        }
+
+        .feature {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .feature i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Alternative Covers */
+        .alt-covers {
+            padding: 40px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .covers-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .cover-item {
+            max-width: 200px;
+            text-align: center;
+        }
+
+        .cover-item img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .cover-item img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cover-label {
+            margin-top: 10px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .story-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        /* Characters Section */
+        .characters-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .character-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .character-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .character-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .character-info {
+            padding: 20px;
+        }
+
+        .character-info h3 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.1rem;
+        }
+
+        .pricing {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .price-option {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            min-width: 200px;
+            position: relative;
+        }
+
+        .price-option.featured {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid var(--secondary);
+            transform: scale(1.05);
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #ffcccc;
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+
+        .free-badge {
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .timer {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 400px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .timer span {
+            color: var(--secondary);
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #343a40;
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 0;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .book-section, .story-section, .characters-section, .cta-section, .testimonials-section {
+                padding: 60px 0;
+            }
+            
+            .price-option.featured {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">Beautiful<span>Venom</span></div>
+            <p class="tagline">A dark romance that will consume you, body and soul. Passion, secrets, and dangerous love intertwine in this gripping tale.</p>
+            <a href="#purchase" class="btn">Get Your Free Copy Now</a>
+        </div>
+    </header>
+
+    <!-- Book Section -->
+    <section class="book-section">
+        <div class="container">
+            <div class="book-content">
+                <div class="book-cover">
+                    <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1736786563i/221274930.jpg" alt="Beautiful Venom Book Cover">
+                </div>
+                <div class="book-details">
+                    <h2>Beautiful Venom</h2>
+                    <p class="author">by Rina Kent</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>4.5/5 (2,347 ratings)</span>
+                    </div>
+                    <p class="description">
+                        In a world where love is a weapon and passion is poison, two damaged souls find solace in each other's darkness. Elena, running from a past that haunts her every step, crosses paths with Adrian, a man whose reputation precedes him—ruthless, powerful, and dangerously attractive.
+                    </p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-book-open"></i>
+                            <h3>Dark Romance</h3>
+                            <p>Intense, emotional, and captivating</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-heart"></i>
+                            <h3>Forbidden Love</h3>
+                            <p>Passionate and dangerous relationships</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-mask"></i>
+                            <h3>Secrets & Lies</h3>
+                            <p>Twists that will keep you guessing</p>
+                        </div>
+                    </div>
+                    <a href="#purchase" class="btn btn-secondary">Read Sample Chapter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alternative Covers -->
+    <section class="alt-covers">
+        <div class="container">
+            <div class="section-title">
+                <h2>Special Edition Covers</h2>
+                <p>Collect your favorite version of this dark romance</p>
+            </div>
+            <div class="covers-container">
+                <div class="cover-item">
+                    <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1736786563i/221274930.jpg" alt="Original Cover">
+                    <p class="cover-label">Original Edition</p>
+                </div>
+                <div class="cover-item">
+                    <img src="https://prodimage.images-bn.com/pimages/9781464255489_p0_v3_s600x595.jpg" alt="Special Edition Cover">
+                    <p class="cover-label">Special Edition</p>
+                </div>
+                <div class="cover-item">
+                    <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1736840303i/214303307.jpg" alt="Collector's Edition">
+                    <p class="cover-label">Collector's Edition</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Story</h2>
+                <p>Dive into a world where love and darkness collide</p>
+            </div>
+            <div class="story-content">
+                <p>Elena Volkov has spent years building walls around her heart, determined never to let anyone close enough to hurt her again. But when she crosses paths with Adrian Blackwood, those walls begin to crumble.</p>
+                
+                <p>Adrian is everything she should avoid—a man with a dangerous reputation and secrets that could destroy them both. Yet the attraction between them is undeniable, a magnetic pull that neither can resist.</p>
+                
+                <p>As their worlds collide, Elena discovers that Adrian's darkness mirrors her own. Together, they navigate a relationship built on passion, trust issues, and the ghosts of their pasts. But when outside forces threaten to tear them apart, they must decide if their love is strong enough to survive the venom that surrounds them.</p>
+                
+                <div class="warning">
+                    <p><strong>Content Warning:</strong> This book contains mature themes, explicit content, and situations that some readers may find disturbing. Recommended for readers 18+.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters Section -->
+    <section class="characters-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Main Characters</h2>
+                <p>Meet the complex souls at the heart of this dark romance</p>
+            </div>
+            <div class="characters-grid">
+                <div class="character-card">
+                    <div class="character-img" style="background-image: url('https://images.unsplash.com/photo-1494790108755-2616c113a1c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="character-info">
+                        <h3>Elena Volkov</h3>
+                        <p>A woman with a haunted past, determined to protect her heart at all costs. Strong-willed yet vulnerable, she finds herself drawn to the one man she should avoid.</p>
+                    </div>
+                </div>
+                <div class="character-card">
+                    <div class="character-img" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="character-info">
+                        <h3>Adrian Blackwood</h3>
+                        <p>Powerful, dangerous, and irresistibly attractive. Behind his ruthless exterior lies a man haunted by his own demons, searching for someone who can see past his darkness.</p>
+                    </div>
+                </div>
+                <div class="character-card">
+                    <div class="character-img" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="character-info">
+                        <h3>Isabella</h3>
+                        <p>Elena's best friend and voice of reason. She provides the moral compass in a world where right and wrong are often blurred.</p>
+                    </div>
+                </div>
+                <div class="character-card">
+                    <div class="character-img" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="character-info">
+                        <h3>Marcus</h3>
+                        <p>Adrian's right-hand man and loyal friend. He walks the fine line between business and personal relationships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Reader Reviews</h2>
+                <p>See what readers are saying about Beautiful Venom</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I couldn't put this book down! The chemistry between Elena and Adrian is electric. Rina Kent has created a dark romance masterpiece that will stay with me for a long time."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SR</div>
+                        <div>
+                            <h4>Sarah Reynolds</h4>
+                            <p>Avid Reader</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"This book consumed me. The emotional depth, the twists and turns, the passion—everything about it was perfect. I finished it in one sitting and immediately started reading it again."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MJ</div>
+                        <div>
+                            <h4>Michael Johnson</h4>
+                            <p>Romance Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Rina Kent has done it again! Beautiful Venom is a perfect blend of darkness and romance. The character development is exceptional, and the story will keep you on the edge of your seat."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AL</div>
+                        <div>
+                            <h4>Amanda Lee</h4>
+                            <p>Book Blogger</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="purchase">
+        <div class="container">
+            <h2>Get Your FREE Copy For The Next 24 Hours!</h2>
+            <p>This is my gift to you - download Beautiful Venom completely free for the next 24 hours only.</p>
+            
+            <div class="timer">
+                <i class="fas fa-clock"></i> This offer expires in: <span id="countdown">24:00:00</span>
+            </div>
+            
+            <div class="pricing">
+                <div class="price-option">
+                    <div class="price">$9.99</div>
+                    <p>Paperback</p>
+                    <p>Free Shipping</p>
+                </div>
+                <div class="price-option featured">
+                    <div class="free-badge">FREE FOR 24 HOURS</div>
+                    <div class="price">
+                        <span class="original-price">$4.99</span> FREE
+                    </div>
+                    <p>Ebook Version</p>
+                    <p>Instant Download</p>
+                    <p>DRM-Free</p>
+                </div>
+                <div class="price-option">
+                    <div class="price">$14.99</div>
+                    <p>Collector's Edition</p>
+                    <p>Signed Copy + Bonus Content</p>
+                </div>
+            </div>
+            
+            <a href="#" class="btn btn-secondary btn-large">Download FREE Ebook Now</a>
+            <p style="margin-top: 15px; font-size: 0.9rem;">No credit card required. No strings attached.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Beautiful Venom</h3>
+                    <p>A dark romance novel by Rina Kent that explores the dangerous intersection of love and darkness.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About the Author</a></li>
+                        <li><a href="#">Other Books</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Beautiful Venom by Rina Kent. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown timer for the 24-hour offer
+        function startCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            let hours = 24;
+            let minutes = 0;
+            let seconds = 0;
+            
+            const countdown = setInterval(() => {
+                // Format the time
+                const formattedHours = hours.toString().padStart(2, '0');
+                const formattedMinutes = minutes.toString().padStart(2, '0');
+                const formattedSeconds = seconds.toString().padStart(2, '0');
+                
+                // Update the countdown display
+                countdownElement.textContent = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+                
+                // Decrement the time
+                if (seconds > 0) {
+                    seconds--;
+                } else {
+                    if (minutes > 0) {
+                        minutes--;
+                        seconds = 59;
+                    } else {
+                        if (hours > 0) {
+                            hours--;
+                            minutes = 59;
+                            seconds = 59;
+                        } else {
+                            // Countdown finished
+                            clearInterval(countdown);
+                            countdownElement.textContent = "OFFER EXPIRED";
+                            document.querySelector('.btn-large').textContent = "Offer Expired";
+                            document.querySelector('.btn-large').style.backgroundColor = "#6c757d";
+                            document.querySelector('.btn-large').style.pointerEvents = "none";
+                        }
+                    }
+                }
+            }, 1000);
+        }
+        
+        // Start the countdown when the page loads
+        window.onload = startCountdown;
+    </script>
+</body>
+</html>
